@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Prudential Financial Developer API
+  description: >-
+    Prudential Financial provides APIs for accessing insurance and financial
+    services data, including retirement accounts, annuities, and financial
+    product information.
+  version: 1.0.0
+  contact:
+    name: Prudential Financial
+    url: https://developers.prudential.com/
+servers:
+  - url: https://developer.apis.prudential.com
+    description: Production
+paths:
+  /accounts:
+    get:
+      operationId: getAccounts
+      summary: Get Accounts
+      description: Retrieve a list of financial accounts.
+      tags:
+        - Accounts
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountList'
+        '401':
+          description: Unauthorized
+  /accounts/{accountId}:
+    get:
+      operationId: getAccountById
+      summary: Get Account by ID
+      description: Retrieve details of a specific financial account.
+      tags:
+        - Accounts
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '404':
+          description: Account not found
+  /retirement/plans:
+    get:
+      operationId: getRetirementPlans
+      summary: Get Retirement Plans
+      description: Retrieve available retirement plans.
+      tags:
+        - Retirement
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanList'
+tags:
+  - name: Accounts
+    description: Financial account operations
+  - name: Retirement
+    description: Retirement plan operations
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        balance:
+          type: number
+          format: double
+        status:
+          type: string
+    AccountList:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+    Plan:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        description:
+          type: string
+    PlanList:
+      type: object
+      properties:
+        plans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plan'
