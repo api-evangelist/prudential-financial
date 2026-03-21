@@ -1,0 +1,24 @@
+aid: prudential-financial
+url: https://raw.githubusercontent.com/api-evangelist/prudential-financial/refs/heads/main/apis.yml
+apis:
+  - aid: prudential-financial:developer-api
+    name: Prudential Financial Developer API
+    tags:
+      - Insurance
+      - Financial Services
+      - Retirement
+      - Annuities
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://developer.apis.prudential.com
+    humanURL: https://developers.prudential.com/
+    properties:
+      - url: https://developers.prudential.com/
+        type: Documentation
+      - url: openapi/prudential-financial-developer-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      Prudential Financial provides a developer portal offering APIs for
+      integrating with their insurance and financial services platform. The
+      API portal enables access to retirement, annuities, and financial
+      product data, supporting enterprise API transformation across the
+      organization.
