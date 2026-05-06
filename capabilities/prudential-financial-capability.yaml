@@ -1,0 +1,137 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Prudential Financial Developer API
+  description: Prudential Financial provides APIs for accessing insurance and financial services data, including retirement
+    accounts, annuities, and financial product information.
+  tags:
+  - Prudential
+  - Financial
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: prudential-financial
+    baseUri: https://developer.apis.prudential.com
+    description: Prudential Financial Developer API HTTP API.
+    resources:
+    - name: accounts
+      path: /accounts
+      operations:
+      - name: getaccounts
+        method: GET
+        description: Get Accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid
+      path: /accounts/{accountId}
+      operations:
+      - name: getaccountbyid
+        method: GET
+        description: Get Account by ID
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: retirement-plans
+      path: /retirement/plans
+      operations:
+      - name: getretirementplans
+        method: GET
+        description: Get Retirement Plans
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: prudential-financial-rest
+    description: REST adapter for Prudential Financial Developer API.
+    resources:
+    - path: /accounts
+      name: getaccounts
+      operations:
+      - method: GET
+        name: getaccounts
+        description: Get Accounts
+        call: prudential-financial.getaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}
+      name: getaccountbyid
+      operations:
+      - method: GET
+        name: getaccountbyid
+        description: Get Account by ID
+        call: prudential-financial.getaccountbyid
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /retirement/plans
+      name: getretirementplans
+      operations:
+      - method: GET
+        name: getretirementplans
+        description: Get Retirement Plans
+        call: prudential-financial.getretirementplans
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: prudential-financial-mcp
+    transport: http
+    description: MCP adapter for Prudential Financial Developer API for AI agent use.
+    tools:
+    - name: getaccounts
+      description: Get Accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: prudential-financial.getaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaccountbyid
+      description: Get Account by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: prudential-financial.getaccountbyid
+      with:
+        accountId: tools.accountId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getretirementplans
+      description: Get Retirement Plans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: prudential-financial.getretirementplans
+      outputParameters:
+      - type: object
+        mapping: $.
