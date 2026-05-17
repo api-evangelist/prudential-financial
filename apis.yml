@@ -5,7 +5,7 @@ description: >-
   insurance, retirement planning, investment management, and other financial
   products and services. Founded in 1875 and headquartered in Newark, New Jersey,
   the company serves individual and institutional customers worldwide.
-type: API
+kind: api
 url: https://raw.githubusercontent.com/api-evangelist/prudential-financial/refs/heads/main/apis.yml
 tags:
   - Annuities
