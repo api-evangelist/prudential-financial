@@ -1,0 +1,108 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Prudential Financial Developer API — Accounts
+  description: 'Prudential Financial Developer API — Accounts. 2 operations. Lead operation: Get Accounts. Self-contained
+    Naftiko capability covering one Prudential Financial business surface.'
+  tags:
+  - Prudential Financial
+  - Accounts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PRUDENTIAL_FINANCIAL_API_KEY: PRUDENTIAL_FINANCIAL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: developer-accounts
+    baseUri: https://developer.apis.prudential.com
+    description: Prudential Financial Developer API — Accounts business capability. Self-contained, no shared references.
+    resources:
+    - name: accounts
+      path: /accounts
+      operations:
+      - name: getaccounts
+        method: GET
+        description: Get Accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountId
+      path: /accounts/{accountId}
+      operations:
+      - name: getaccountbyid
+        method: GET
+        description: Get Account by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: developer-accounts-rest
+    port: 8080
+    description: REST adapter for Prudential Financial Developer API — Accounts. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/accounts
+      name: accounts
+      description: REST surface for accounts.
+      operations:
+      - method: GET
+        name: getaccounts
+        description: Get Accounts
+        call: developer-accounts.getaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/accounts/{accountid}
+      name: accounts-accountid
+      description: REST surface for accounts-accountId.
+      operations:
+      - method: GET
+        name: getaccountbyid
+        description: Get Account by ID
+        call: developer-accounts.getaccountbyid
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: developer-accounts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Prudential Financial Developer API — Accounts. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: get-accounts
+      description: Get Accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: developer-accounts.getaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-account-id
+      description: Get Account by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: developer-accounts.getaccountbyid
+      with:
+        accountId: tools.accountId
+      outputParameters:
+      - type: object
+        mapping: $.
