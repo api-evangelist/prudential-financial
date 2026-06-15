@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Prudential Financial Developer API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.apis.prudential.com/accounts"
+          },
+          "docs": "Retrieve a list of financial accounts."
+        },
+        {
+          "info": {
+            "name": "Get Account by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.apis.prudential.com/accounts/:accountId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific financial account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Retirement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Retirement Plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://developer.apis.prudential.com/retirement/plans"
+          },
+          "docs": "Retrieve available retirement plans."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
