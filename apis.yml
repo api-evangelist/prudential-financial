@@ -39,7 +39,7 @@ common:
     url: https://www.linkedin.com/company/prudential-financial
   - type: Website
     url: https://www.prudential.com/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developers.prudential.com/llms.txt
 maintainers:
   - FN: API Evangelist
