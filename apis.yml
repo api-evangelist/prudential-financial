@@ -35,6 +35,8 @@ apis:
       - type: OpenAPI
         url: openapi/prudential-financial-developer-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/prudential-financial-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/prudential-financial
   - type: Website
