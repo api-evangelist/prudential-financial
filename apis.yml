@@ -35,6 +35,8 @@ apis:
       - type: OpenAPI
         url: openapi/prudential-financial-developer-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/prudential-financial-agentic-access.yml
   - type: DomainSecurity
     url: security/prudential-financial-domain-security.yml
   - type: LinkedIn
