@@ -1,4 +1,17 @@
 aid: prudential-financial
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/prudential-financial.png
 name: Prudential Financial
 description: >-
   Prudential Financial, Inc. is a global financial services company offering insurance, retirement planning, investment
@@ -16,24 +29,30 @@ created: '2026-03-21'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: prudential-financial:prudential-financial-developer-api
-    name: Prudential Financial Developer API
-    description: >-
-      Prudential Financial provides a developer portal offering APIs for integrating with their insurance and financial
-      services platform. The API portal enables access to retirement, annuities, and financial product data, supporting
-      enterprise API transformation across the organization.
-    humanURL: https://developers.prudential.com/
-    baseURL: https://developer.apis.prudential.com
-    tags:
-      - Annuities
-      - Financial Services
-      - Insurance
-      - Retirement
-    properties:
-      - type: Documentation
-        url: https://developers.prudential.com/
-      - type: OpenAPI
-        url: openapi/prudential-financial-developer-api-openapi.yml
+- aid: prudential-financial:prudential-financial-accounts-api
+  name: Prudential Financial Accounts API
+  description: Financial account operations
+  humanURL: https://developers.prudential.com/
+  baseURL: https://developer.apis.prudential.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/prudential-financial-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.prudential.com/
+- aid: prudential-financial:prudential-financial-retirement-api
+  name: Prudential Financial Retirement API
+  description: Retirement plan operations
+  humanURL: https://developers.prudential.com/
+  baseURL: https://developer.apis.prudential.com
+  tags:
+  - Retirement
+  properties:
+  - type: OpenAPI
+    url: openapi/prudential-financial-retirement-api-openapi.yml
+  - type: Documentation
+    url: https://developers.prudential.com/
 common:
   - type: AgenticAccess
     url: agentic-access/prudential-financial-agentic-access.yml
