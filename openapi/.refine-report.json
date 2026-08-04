@@ -1,0 +1,16 @@
+{
+  "provider": "prudential-financial",
+  "sources": [
+    "prudential-financial-accounts-api-openapi.yml",
+    "prudential-financial-retirement-api-openapi.yml"
+  ],
+  "outputs": [
+    "prudential-financial-accounts-api-openapi.yml",
+    "prudential-financial-retirement-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
