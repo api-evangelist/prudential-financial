@@ -27,7 +27,7 @@ tags:
   - Fortune 100
 created: '2026-03-21'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: prudential-financial:prudential-financial-accounts-api
   name: Prudential Financial Accounts API
