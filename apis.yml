@@ -21,6 +21,12 @@ kind: api
 url: https://raw.githubusercontent.com/api-evangelist/prudential-financial/refs/heads/main/apis.yml
 tags:
   - Annuities
+  - Financial-Services
+  - Insurance
+  - Retirement
+  - Fortune 100
+tags_raw:
+  - Annuities
   - Financial Services
   - Insurance
   - Retirement
@@ -35,6 +41,8 @@ apis:
   humanURL: https://developers.prudential.com/
   baseURL: https://developer.apis.prudential.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
