@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Prudential Financial Developer Accounts Retirement API
+  title: Prudential Financial Developer Retirement API
   description: Prudential Financial provides APIs for accessing insurance and financial services data, including retirement accounts, annuities, and financial product information.
   version: 1.0.0
   contact:
@@ -29,6 +29,13 @@ paths:
                 $ref: '#/components/schemas/PlanList'
 components:
   schemas:
+    PlanList:
+      type: object
+      properties:
+        plans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plan'
     Plan:
       type: object
       properties:
@@ -40,10 +47,3 @@ components:
           type: string
         description:
           type: string
-    PlanList:
-      type: object
-      properties:
-        plans:
-          type: array
-          items:
-            $ref: '#/components/schemas/Plan'

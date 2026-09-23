@@ -1,8 +1,7 @@
 {
   "provider": "prudential-financial",
   "sources": [
-    "prudential-financial-accounts-api-openapi.yml",
-    "prudential-financial-retirement-api-openapi.yml"
+    "_original/prudential-financial-developer-api-openapi.yml"
   ],
   "outputs": [
     "prudential-financial-accounts-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "prudential-financial-developer-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "prudential-financial-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "prudential-financial-retirement-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

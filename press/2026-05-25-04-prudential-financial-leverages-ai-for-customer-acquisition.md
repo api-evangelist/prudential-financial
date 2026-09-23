@@ -1,7 +1,9 @@
 ---
 title: Prudential Financial Leverages AI for Customer Acquisition
 url: https://www.linkedin.com/posts/jamiecuffe_ai-agents-are-handling-hundreds-of-thousands-activity-7402343553928024066-H01B
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Prudential Financial" press release artificial intelligence'
 position: 4
 source: serpapi-google

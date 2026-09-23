@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Prudential Financial Developer Accounts API
   description: Prudential Financial provides APIs for accessing insurance and financial services data, including retirement accounts, annuities, and financial product information.
@@ -53,6 +53,13 @@ paths:
           description: Account not found
 components:
   schemas:
+    AccountList:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
     Account:
       type: object
       properties:
@@ -65,10 +72,3 @@ components:
           format: double
         status:
           type: string
-    AccountList:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'

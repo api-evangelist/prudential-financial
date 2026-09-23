@@ -1,7 +1,9 @@
 ---
 title: Artificial Intelligence at Prudential - Two Use Cases
 url: https://emerj.com/artificial-intelligence-at-prudential/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Prudential Financial" press release artificial intelligence'
 position: 3
 source: serpapi-google
