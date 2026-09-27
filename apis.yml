@@ -32,7 +32,7 @@ kind: api
 url: https://raw.githubusercontent.com/api-evangelist/prudential-financial/refs/heads/main/apis.yml
 tags:
   - Annuities
-  - Financial-Services
+  - Financial Services
   - Insurance
   - Retirement
   - Fortune 100
@@ -42,6 +42,7 @@ tags_raw:
   - Insurance
   - Retirement
   - Fortune 100
+  - Financial-Services
 created: '2026-03-21'
 modified: '2026-05-19'
 specificationVersion: '0.23'
