@@ -53,6 +53,13 @@ paths:
           description: Account not found
 components:
   schemas:
+    AccountList:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
     Account:
       type: object
       properties:
@@ -65,10 +72,3 @@ components:
           format: double
         status:
           type: string
-    AccountList:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'

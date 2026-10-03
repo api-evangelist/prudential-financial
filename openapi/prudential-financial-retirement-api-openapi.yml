@@ -29,13 +29,6 @@ paths:
                 $ref: '#/components/schemas/PlanList'
 components:
   schemas:
-    PlanList:
-      type: object
-      properties:
-        plans:
-          type: array
-          items:
-            $ref: '#/components/schemas/Plan'
     Plan:
       type: object
       properties:
@@ -47,3 +40,10 @@ components:
           type: string
         description:
           type: string
+    PlanList:
+      type: object
+      properties:
+        plans:
+          type: array
+          items:
+            $ref: '#/components/schemas/Plan'
