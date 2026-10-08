@@ -74,6 +74,12 @@ apis:
   - type: Documentation
     url: https://developers.prudential.com/
 common:
+  - type: Plans
+    url: plans/prudential-financial-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/prudential-financial-rate-limits.yml
+  - type: FinOps
+    url: finops/prudential-financial-finops.yml
   - type: AgenticAccess
     url: agentic-access/prudential-financial-agentic-access.yml
   - type: DomainSecurity
