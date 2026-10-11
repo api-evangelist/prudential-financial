@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "prudential-financial",
+    "captured_at": "2026-10-11T192229",
+    "source_url": "https://www.prudential.com/",
+    "source_type": "Website",
+    "file": "prudential-financial-2026-10-11T192229.png",
+    "bytes": 424195,
+    "capture": "playwright-local"
+  }
+]
